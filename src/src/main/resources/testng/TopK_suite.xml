@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<!-- @Tas(testBed = [{name=com.ca.apm.tests.testbed.TopkLinuxTestbed, 
+	executeOn=Linuxmachine}], owner = patas07, size = BIG, description = 'Control 
+	Scripts TestNg XML suite for all SaaSE2ETestcases'), snapshotPolicy = SnapshotPolicy.ON_FAILURE, 
+	snapshot = SnapshotMode.LIVE -->
+<suite name="ValidateTopKsuite" configfailurepolicy="continue">
+
+    <listeners>
+        <listener class-name="com.ca.apm.tests.testng.retry.AnnotationTransformer"/>
+        <listener class-name="com.ca.apm.tests.testng.retry.ExtentITestListenerClassAdapter"/>
+    </listeners>
+
+	<test name="ValidateTopKTests" preserve-order="true">
+		<classes>
+			<class name="com.ca.apm.tests.test.TopkTest" />
+		</classes>
+	</test>
+</suite>
+		
